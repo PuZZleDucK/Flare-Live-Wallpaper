@@ -6,31 +6,10 @@
 
     <uses-sdk android:minSdkVersion="7"
 		      android:targetSdkVersion="9"/>
+			  
+	<uses-feature android:name="android.software.live_wallpaper" />
+	
 <!--
-
-    <uses-feature android:name="android.software.live_wallpaper" />
-
-
-
-    <application
-	android:label="@string/target_wallpaper_application_label"
-	android:icon="@drawable/target_lwp_icon" 
-	android:debuggable="false"
-	android:enabled="true">
-
-
-	<activity android:label="@string/target_wallpaper_activity_label" 
-	android:name=".TargetLiveActivity" 
-	android:icon="@drawable/target_lwp_icon"
-	android:enabled="true"
-	android:exported="true"
-	android:process="com.puzzleduck.targetLiveWallpaper.TargetLiveActivity">
-	<intent-filter>
-	<action android:name="android.intent.action.MAIN" />
-	<category android:name="android.intent.category.LAUNCHER" />
-	</intent-filter>
-
-	</activity>
 
 	<service
 	android:label="@string/target_wallpaper_service_label"
@@ -49,11 +28,6 @@
 	android:layout="@layout/activity">
 	</activity>
 
-
-
-    </application>
-
-	</manifest>  
 			  -->
     <application
         android:icon="@drawable/ic_launcher"
@@ -67,6 +41,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+		
+		
+
+		<service
+			android:label="@string/flare_wallpaper_service_label"
+			android:permission="android.permission.BIND_WALLPAPER"
+			android:name="FlareLiveWallpaper">
+			<intent-filter>
+				<action android:name="android.service.wallpaper.WallpaperService" />
+			</intent-filter>
+			<meta-data android:name="android.service.wallpaper" android:resource="@xml/flare_lwp" />
+		</service>
+		<activity
+			android:label="@string/flare_settings"
+			android:name="FlareLiveWallpaperSettings"
+			android:theme="@android:style/Theme.Light.WallpaperSettings"
+			android:exported="true"
+			android:layout="@layout/activity">
+		</activity>
+		
+		
     </application>
 
 </manifest>
