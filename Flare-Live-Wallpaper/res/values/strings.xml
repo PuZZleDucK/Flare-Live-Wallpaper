@@ -5,6 +5,10 @@
     <string name="app_name">FlareLiveWallpaper</string>
     <string name="flare_wallpaper_service_label">Flare live wallpaper service</string>
     <string name="flare_settings">Flare live wallpaper settings</string>
+	<string name="target_settings_flare_summary">Main settings</string>
+	<string name="target_settings_flare_on_summary">on</string>
+	<string name="target_settings_flare_off_summary">off</string>
+	<string name="target_settings_flare_title">Flare Live Wallpaper</string>
 		
 		
 </resources>

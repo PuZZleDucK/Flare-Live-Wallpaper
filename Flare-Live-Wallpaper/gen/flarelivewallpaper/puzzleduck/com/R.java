@@ -22,8 +22,13 @@ public final class R {
         public static final int flare_settings=0x7f050003;
         public static final int flare_wallpaper_service_label=0x7f050002;
         public static final int hello=0x7f050000;
+        public static final int target_settings_flare_off_summary=0x7f050006;
+        public static final int target_settings_flare_on_summary=0x7f050005;
+        public static final int target_settings_flare_summary=0x7f050004;
+        public static final int target_settings_flare_title=0x7f050007;
     }
     public static final class xml {
         public static final int flare_lwp=0x7f040000;
+        public static final int flare_lwp_settings=0x7f040001;
     }
 }

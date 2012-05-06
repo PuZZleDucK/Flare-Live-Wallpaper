@@ -27,7 +27,7 @@ public class TargetLiveWallpaperSettings extends PreferenceActivity
     protected void onCreate(Bundle newBundle) {
         super.onCreate(newBundle);
         getPreferenceManager().setSharedPreferencesName(TargetLiveWallpaper.SHARED_PREFS_NAME);
-        addPreferencesFromResource(R.xml.target_lwp_settings);
+        addPreferencesFromResource(R.xml.flare_lwp_settings);
         
         getPreferenceManager().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
     }
