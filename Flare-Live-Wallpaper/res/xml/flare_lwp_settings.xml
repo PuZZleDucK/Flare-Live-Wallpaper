@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<PreferenceScreen android:key="flarelivewallpaper_settings" android:title="@string/flare_settings" xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen android:key="flare_lwp_settings" android:title="@string/flare_settings" xmlns:android="http://schemas.android.com/apk/res/android">
 
 
 <!--
@@ -15,8 +15,17 @@
 	
 	</PreferenceCategory>
 	-->
-	<PreferenceCategory android:key="target_flare_category" android:summary="@string/target_settings_flare_summary" android:title="@string/target_settings_flare_title">
-		<CheckBoxPreference android:summaryOn="@string/target_settings_flare_on_summary" android:summaryOff="@string/target_settings_flare_off_summary" android:key="target_flare_on" android:title="@string/target_settings_flare_title" android:summary="@string/target_settings_flare_summary" android:defaultValue="true"></CheckBoxPreference>
+	<PreferenceCategory 
+		android:key="flare_category" 
+		android:summary="@string/settings_flare_summary" 
+		android:title="@string/settings_flare_title">
+		  <CheckBoxPreference 
+			android:summaryOn="@string/settings_flare_on_summary" 
+			android:summaryOff="@string/settings_flare_off_summary" 
+			android:key="flare_on" 
+			android:title="@string/settings_flare_title" 
+			android:summary="@string/settings_flare_summary" 
+			android:defaultValue="true"></CheckBoxPreference>
 	</PreferenceCategory>
 	
 </PreferenceScreen>

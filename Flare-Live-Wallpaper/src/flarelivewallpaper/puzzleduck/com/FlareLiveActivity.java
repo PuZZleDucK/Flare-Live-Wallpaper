@@ -35,10 +35,10 @@ import android.provider.MediaStore;
 
 //This is the "app" part of the LWP
 public class FlareLiveActivity extends Activity implements OnSharedPreferenceChangeListener   {
-    public static final String SHARED_PREFS_NAME="target_lwp_settings";
+    public static final String SHARED_PREFS_NAME="flare_lwp_settings";
 
 
-    private static final String TAG = "TargetLiveActivity";
+  //  private static final String TAG = "TargetLiveActivity";
 
 
 	@Override
