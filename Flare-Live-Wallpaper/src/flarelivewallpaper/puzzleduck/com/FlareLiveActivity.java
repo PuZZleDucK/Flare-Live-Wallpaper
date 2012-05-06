@@ -34,7 +34,7 @@ import android.provider.MediaStore;
 
 
 //This is the "app" part of the LWP
-public class TargetLiveActivity extends Activity implements OnSharedPreferenceChangeListener   {
+public class FlareLiveActivity extends Activity implements OnSharedPreferenceChangeListener   {
     public static final String SHARED_PREFS_NAME="target_lwp_settings";
 
 

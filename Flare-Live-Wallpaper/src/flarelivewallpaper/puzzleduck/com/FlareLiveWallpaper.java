@@ -49,7 +49,7 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 
 //This animated wallpaper draws many user selectable items... target, trackers, cursor, etc
-public class TargetLiveWallpaper extends WallpaperService {
+public class FlareLiveWallpaper extends WallpaperService {
     @Override
 	public void onConfigurationChanged(Configuration newConfig) {
 
@@ -150,7 +150,7 @@ public class TargetLiveWallpaper extends WallpaperService {
             paint.setStyle(Paint.Style.STROKE); 
 
 //    		Log.d(TAG, "set prefs listener" );
-            mPrefs = TargetLiveWallpaper.this.getSharedPreferences(SHARED_PREFS_NAME, 0);
+            mPrefs = FlareLiveWallpaper.this.getSharedPreferences(SHARED_PREFS_NAME, 0);
             listener = (SharedPreferences.OnSharedPreferenceChangeListener)this;
             mPrefs.registerOnSharedPreferenceChangeListener(this);
             onSharedPreferenceChanged(mPrefs, null);
@@ -197,10 +197,10 @@ public class TargetLiveWallpaper extends WallpaperService {
             mCursorImage = BitmapFactory.decodeResource(myResources, getResources().getIdentifier( getPackageName() + ":drawable/"+cursor, null, null));
 
             //restart engine here
-            TargetLiveWallpaper.this.onDestroy();
-            TargetLiveWallpaper.this.onCreate();
-            TargetLiveWallpaper.TargetEngine.this.onDestroy();
-            TargetLiveWallpaper.TargetEngine.this.onCreate(getSurfaceHolder());
+            FlareLiveWallpaper.this.onDestroy();
+            FlareLiveWallpaper.this.onCreate();
+            FlareLiveWallpaper.TargetEngine.this.onDestroy();
+            FlareLiveWallpaper.TargetEngine.this.onCreate(getSurfaceHolder());
 //            TargetLiveWallpaper.TargetEngine.this.onSurfaceChanged(getSurfaceHolder(), 0, 0, 0);
             drawFrame();
             

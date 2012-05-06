@@ -20,13 +20,13 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 
-public class TargetLiveWallpaperSettings extends PreferenceActivity
+public class FlareLiveWallpaperSettings extends PreferenceActivity
     implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     @Override
     protected void onCreate(Bundle newBundle) {
         super.onCreate(newBundle);
-        getPreferenceManager().setSharedPreferencesName(TargetLiveWallpaper.SHARED_PREFS_NAME);
+        getPreferenceManager().setSharedPreferencesName(FlareLiveWallpaper.SHARED_PREFS_NAME);
         addPreferencesFromResource(R.xml.flare_lwp_settings);
         
         getPreferenceManager().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
