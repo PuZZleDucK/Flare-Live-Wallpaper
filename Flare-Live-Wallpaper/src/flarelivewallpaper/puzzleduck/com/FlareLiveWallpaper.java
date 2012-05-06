@@ -62,9 +62,9 @@ public class FlareLiveWallpaper extends WallpaperService {
     
     class TargetEngine extends Engine 
         implements SharedPreferences.OnSharedPreferenceChangeListener {
-        private static final int MAX_FLARE_COUNT = 1;
+        private static final int MAX_FLARE_COUNT = 2;
 
-		private final Handler mHandler = new Handler();
+		//private final Handler mHandler = new Handler();
 
 //		private int TD_SCALE = 1;//100
 //		private final static int TD_OFFSET_X = 0;
@@ -112,11 +112,11 @@ public class FlareLiveWallpaper extends WallpaperService {
 //        String cursor = "debianswirl";//cursor_typenames
 //        private Bitmap mCursorImage;
 
-        private final Runnable mDrawCube = new Runnable() {
-            public void run() {
-                drawFrame();
-            }
-        };
+//        private final Runnable mDrawCube = new Runnable() {
+//            public void run() {
+//                drawFrame();
+//            }
+//        };
         private boolean mVisible;
         private SharedPreferences mPrefs;
 
@@ -312,7 +312,7 @@ public class FlareLiveWallpaper extends WallpaperService {
  
 
             //flare settings:
-            flareOn = prefs.getBoolean("target_flare_on", true);
+            flareOn = prefs.getBoolean("flare_on", true);
  
             
         }
@@ -320,7 +320,7 @@ public class FlareLiveWallpaper extends WallpaperService {
         @Override
         public void onDestroy() {
             super.onDestroy();
-            mHandler.removeCallbacks(mDrawCube);
+            //mHandler.removeCallbacks(mDrawCube);
         }
 
         @Override
@@ -329,7 +329,7 @@ public class FlareLiveWallpaper extends WallpaperService {
             if (visible) {
                 drawFrame();
             } else {
-                mHandler.removeCallbacks(mDrawCube);
+                //mHandler.removeCallbacks(mDrawCube);
             }
         }
 
@@ -354,7 +354,7 @@ public class FlareLiveWallpaper extends WallpaperService {
         public void onSurfaceDestroyed(SurfaceHolder holder) {
             super.onSurfaceDestroyed(holder);
             mVisible = false;
-            mHandler.removeCallbacks(mDrawCube);
+            //mHandler.removeCallbacks(mDrawCube);
         }
 
         @Override
@@ -438,10 +438,10 @@ public class FlareLiveWallpaper extends WallpaperService {
                 if (c != null) holder.unlockCanvasAndPost(c);
             }
 
-            mHandler.removeCallbacks(mDrawCube);
-            if (mVisible) {
-                mHandler.postDelayed(mDrawCube, 1000 / 25);
-            }
+//            mHandler.removeCallbacks(mDrawCube);
+//            if (mVisible) {
+//                mHandler.postDelayed(mDrawCube, 1000 / 25);
+//            }
         }
         
 //        void drawQuadTarget(Canvas c) {
@@ -1173,13 +1173,13 @@ public class FlareLiveWallpaper extends WallpaperService {
         
     }
 
-//	public static void changeSettings() {
-//		if(SHARED_PREFS_NAME != null)
-//		{
-//			WallpaperService ws = (WallpaperService)TargetLiveWallpaper;
-//		}
-//		
-//	}
+	public static void changeSettings() {
+		if(SHARED_PREFS_NAME != null)
+		{
+			//WallpaperService ws = (WallpaperService)FlareLiveWallpaper;
+		}
+		
+	}
     
 
 //    static class ThreeDPoint {
