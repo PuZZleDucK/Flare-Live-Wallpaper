@@ -1,8 +1,6 @@
 
-//
 //Sweet... modding by PuZZleDucK, I'll take some credit
-//
-//
+
 
 package flarelivewallpaper.puzzleduck.com;
 
@@ -30,7 +28,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 
-//This animated wallpaper draws many user selectable items... target, trackers, cursor, etc
+//This animated wallpaper draws flares and.fire works
 public class FlareLiveWallpaper extends WallpaperService {
     @Override
 	public void onConfigurationChanged(Configuration newConfig) {
@@ -40,11 +38,8 @@ public class FlareLiveWallpaper extends WallpaperService {
 	}
 
 	public static final String SHARED_PREFS_NAME="flare_lwp_settings";
-    //private static final String TAG = "FlareLiveWallpaper";
-
     private ArrayList<FlareData> flareList;
-    
-
+ 
     @Override
     public void onCreate() {
         super.onCreate();
