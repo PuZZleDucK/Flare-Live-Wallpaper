@@ -3,34 +3,17 @@
 
 package flarelivewallpaper.puzzleduck.com;
 
-
-import java.net.URL;
-
 import android.app.Activity;
 //import android.app.WallpaperManager;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
 //import android.service.wallpaper.WallpaperService;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.MotionEvent;
-import android.view.View;
-import android.webkit.WebView;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.TableRow;
-
-
-
-import android.preference.Preference;
-import android.preference.PreferenceActivity;
-import android.preference.PreferenceManager;
-import android.provider.MediaStore;
 
 
 //This is the "app" part of the LWP

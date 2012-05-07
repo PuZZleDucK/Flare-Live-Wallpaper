@@ -59,7 +59,7 @@ public class FlareLiveWallpaper extends WallpaperService {
         implements SharedPreferences.OnSharedPreferenceChangeListener {
         private static final int MAX_FLARE_COUNT = 2;
 
-		//private final Handler mHandler = new Handler();
+		private final Handler mHandler = new Handler();
         private final Paint mPaint = new Paint();
         private float mTouchX = -1;
         private float mTouchY = -1;
@@ -72,11 +72,11 @@ public class FlareLiveWallpaper extends WallpaperService {
         
         private boolean flareOn = true;
         
-//        private final Runnable mDrawCube = new Runnable() {
-//            public void run() {
-//                drawFrame();
-//            }
-//        };
+        private final Runnable mDrawCube = new Runnable() {
+            public void run() {
+                drawFrame();
+            }
+        };
         private boolean mVisible;
         private SharedPreferences mPrefs;
 
@@ -109,15 +109,15 @@ public class FlareLiveWallpaper extends WallpaperService {
 //            mCursorImage = BitmapFactory.decodeResource(myResources, getResources().getIdentifier( getPackageName() + ":drawable/"+cursor, null, null));
 
             //restart engine here
-            FlareLiveWallpaper.this.onDestroy();
-            FlareLiveWallpaper.this.onCreate();
-            FlareLiveWallpaper.TargetEngine.this.onDestroy();
-            FlareLiveWallpaper.TargetEngine.this.onCreate(getSurfaceHolder());
-//            TargetLiveWallpaper.TargetEngine.this.onSurfaceChanged(getSurfaceHolder(), 0, 0, 0);
-            drawFrame();
-            
-            onDestroy();
-            onCreate(getSurfaceHolder());
+//            FlareLiveWallpaper.this.onDestroy();
+//            FlareLiveWallpaper.this.onCreate();
+//            FlareLiveWallpaper.TargetEngine.this.onDestroy();
+//            FlareLiveWallpaper.TargetEngine.this.onCreate(getSurfaceHolder());
+//            FlareLiveWallpaper.TargetEngine.this.onSurfaceChanged(getSurfaceHolder(), 0, 0, 0);
+//            drawFrame();
+//            
+//            onDestroy();
+//            onCreate(getSurfaceHolder());
         }
 		
         @Override
@@ -139,7 +139,7 @@ public class FlareLiveWallpaper extends WallpaperService {
         @Override
         public void onDestroy() {
             super.onDestroy();
-            //mHandler.removeCallbacks(mDrawCube);
+            mHandler.removeCallbacks(mDrawCube);
         }
 
         @Override
@@ -148,7 +148,7 @@ public class FlareLiveWallpaper extends WallpaperService {
             if (visible) {
                 drawFrame();
             } else {
-                //mHandler.removeCallbacks(mDrawCube);
+                mHandler.removeCallbacks(mDrawCube);
             }
         }
 
@@ -169,7 +169,7 @@ public class FlareLiveWallpaper extends WallpaperService {
         public void onSurfaceDestroyed(SurfaceHolder holder) {
             super.onSurfaceDestroyed(holder);
             mVisible = false;
-            //mHandler.removeCallbacks(mDrawCube);
+            mHandler.removeCallbacks(mDrawCube);
         }
 
         @Override
@@ -215,10 +215,10 @@ public class FlareLiveWallpaper extends WallpaperService {
                 if (c != null) holder.unlockCanvasAndPost(c);
             }
 
-//            mHandler.removeCallbacks(mDrawCube);
-//            if (mVisible) {
-//                mHandler.postDelayed(mDrawCube, 1000 / 25);
-//            }
+            mHandler.removeCallbacks(mDrawCube);
+            if (mVisible) {
+                mHandler.postDelayed(mDrawCube, 1000 / 25);
+            }
         }
         
         void updateTouchPoint(Canvas c) {
