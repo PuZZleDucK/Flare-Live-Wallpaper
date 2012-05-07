@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-	<wallpaper 
+
+
+
+
+	<wallpaper
 		xmlns:android="http://schemas.android.com/apk/res/android"
-        android:settingsActivity="FlareLiveWallpaperSettings" 
-		android:thumbnail="@drawable/flare_lwp"
+        android:settingsActivity="flarelivewallpaper.puzzleduck.com.FlareLiveWallpaperSettings" 
 	/>
