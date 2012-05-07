@@ -63,7 +63,7 @@
 			android:name="FlareLiveWallpaperSettings"
 			android:theme="@android:style/Theme.Light.WallpaperSettings"
 			android:exported="true"
-			android:layout="@layout/main">
+			android:layout="@xml/">
 		</activity>
 		
 		

@@ -444,7 +444,8 @@ public class FlareLiveWallpaper extends WallpaperService {
 	public static void changeSettings() {
 		if(SHARED_PREFS_NAME != null)
 		{
-			//WallpaperService ws = (WallpaperService)FlareLiveWallpaper;
+			
+			//WallpaperService ws = (WallpaperService)FlareLiveWallpaper.this;
 		}
 		
 	}

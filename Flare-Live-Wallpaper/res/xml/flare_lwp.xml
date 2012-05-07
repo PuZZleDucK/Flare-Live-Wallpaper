@@ -2,6 +2,6 @@
 
 	<wallpaper 
 		xmlns:android="http://schemas.android.com/apk/res/android"
-        android:settingsActivity="flarelivewallpaper.puzzleduck.com.FlareLiveActivity" 
+        android:settingsActivity="FlareLiveWallpaperSettings" 
 		android:thumbnail="@drawable/flare_lwp"
 	/>
