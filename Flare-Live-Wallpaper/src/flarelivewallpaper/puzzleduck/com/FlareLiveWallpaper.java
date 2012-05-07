@@ -47,7 +47,7 @@ public class FlareLiveWallpaper extends WallpaperService {
     
     class TargetEngine extends Engine 
         implements SharedPreferences.OnSharedPreferenceChangeListener {
-        private static final int MAX_FLARE_COUNT = 2;
+        private static final int MAX_FLARE_COUNT = 3;
 
 		private final Handler mHandler = new Handler();
         private final Paint mPaint = new Paint();
