@@ -7,24 +7,14 @@ package flarelivewallpaper.puzzleduck.com;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
-
-
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.service.wallpaper.WallpaperService;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 
@@ -70,7 +60,7 @@ public class FlareLiveWallpaper extends WallpaperService {
         private float mLastTouchX = 239;//indent initial display
         private float mLastTouchY = 239;
         
-        private boolean flareOn = true;
+//        private boolean flareOn = true;
         
         private final Runnable mDrawCube = new Runnable() {
             public void run() {
@@ -101,39 +91,22 @@ public class FlareLiveWallpaper extends WallpaperService {
         public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
         
             //flare settings:
-            flareOn = prefs.getBoolean("flare_on", true);
-//            
-//            //from sdk... think i get it now
-//            Resources myResources;
-//            myResources = getBaseContext().getResources();
-//            mCursorImage = BitmapFactory.decodeResource(myResources, getResources().getIdentifier( getPackageName() + ":drawable/"+cursor, null, null));
-
-            //restart engine here
-//            FlareLiveWallpaper.this.onDestroy();
-//            FlareLiveWallpaper.this.onCreate();
-//            FlareLiveWallpaper.TargetEngine.this.onDestroy();
-//            FlareLiveWallpaper.TargetEngine.this.onCreate(getSurfaceHolder());
-//            FlareLiveWallpaper.TargetEngine.this.onSurfaceChanged(getSurfaceHolder(), 0, 0, 0);
-//            drawFrame();
-//            
-//            onDestroy();
-//            onCreate(getSurfaceHolder());
+//            flareOn = prefs.getBoolean("flare_on", true);
         }
 		
         @Override
         public void onCreate(SurfaceHolder surfaceHolder) {
             super.onCreate(surfaceHolder);
             setTouchEventsEnabled(true);
-           
-            //init flare list
-            flareList = new ArrayList<FlareData>(1);
-            
-            //maybe just if null??? .. using mPrefs now... hopefully this will be resolved now
             SharedPreferences prefs = mPrefs;        
 
             //flare settings:
-            flareOn = prefs.getBoolean("flare_on", true);
+//            flareOn = prefs.getBoolean("flare_on", true);
  
+            //init flare list
+            flareList = new ArrayList<FlareData>(1);
+            
+            
         }
 
         @Override
@@ -207,7 +180,7 @@ public class FlareLiveWallpaper extends WallpaperService {
                 c = holder.lockCanvas();
                 if (c != null) {
                 updateTouchPoint(c);
-//DEBUG
+                //DEBUG
                 drawConkey(c);
                 drawTouchPointFlare(c);
                 }

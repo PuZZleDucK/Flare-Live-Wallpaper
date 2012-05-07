@@ -4,13 +4,10 @@
 package flarelivewallpaper.puzzleduck.com;
 
 import android.app.Activity;
-//import android.app.WallpaperManager;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-//import android.service.wallpaper.WallpaperService;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -18,11 +15,7 @@ import android.view.MotionEvent;
 
 //This is the "app" part of the LWP
 public class FlareLiveActivity extends Activity implements OnSharedPreferenceChangeListener   {
-    public static final String SHARED_PREFS_NAME="flare_lwp_settings";
-
-
-  //  private static final String TAG = "TargetLiveActivity";
-
+//    public static final String SHARED_PREFS_NAME="flare_lwp_settings";
 
 	@Override
 	public boolean dispatchTouchEvent(MotionEvent ev) {
