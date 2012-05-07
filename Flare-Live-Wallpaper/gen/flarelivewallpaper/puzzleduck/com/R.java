@@ -29,6 +29,6 @@ public final class R {
     }
     public static final class xml {
         public static final int flare_lwp=0x7f040000;
-        public static final int flare_lwp_settings=0x7f040001;
+        public static final int flarelivewallpapersettings=0x7f040001;
     }
 }

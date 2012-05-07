@@ -52,7 +52,7 @@
 		<service
 			android:label="@string/flare_wallpaper_service_label"
 			android:permission="android.permission.BIND_WALLPAPER"
-			android:name="FlareLiveWallpaper">
+			android:name="FlareLiveWallpaperService">
 			<intent-filter>
 				<action android:name="android.service.wallpaper.WallpaperService" />
 			</intent-filter>
@@ -63,7 +63,7 @@
 			android:name="FlareLiveWallpaperSettings"
 			android:theme="@android:style/Theme.Light.WallpaperSettings"
 			android:exported="true"
-			android:layout="@xml/">
+			android:layout="@xml/flarelivewallpapersettings">
 		</activity>
 		
 		
