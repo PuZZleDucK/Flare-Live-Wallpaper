@@ -37,7 +37,7 @@
         android:label="@string/app_name" >
         
         <activity
-            android:name=".FlareLiveWallpaperActivity"
+            android:name="flarelivewallpaper.puzzleduck.com.FlareLiveWallpaperActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action 
