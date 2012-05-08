@@ -2,7 +2,7 @@
 //Sweet... modding by PuZZleDucK, I'll take some credit
 
 
-package flarelivewallpaper.puzzleduck.com;
+package com.puzzleduck.FlareLiveWallpaper;
  
 import java.util.ArrayList;
 import java.util.Iterator;

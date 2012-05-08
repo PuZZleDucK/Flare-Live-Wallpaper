@@ -1,4 +1,4 @@
-package flarelivewallpaper.puzzleduck.com;
+package com.puzzleduck.FlareLiveWallpaper;
 
 public class FlareData {
 	private float x;

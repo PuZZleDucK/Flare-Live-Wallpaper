@@ -1,6 +1,6 @@
 
 
-package flarelivewallpaper.puzzleduck.com;
+package com.puzzleduck.FlareLiveWallpaper;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
