@@ -2,7 +2,7 @@
 <resources>
 
     <string name="hello">Hello World, FlareLiveWallpaperActivity!</string>
-    <string name="app_name">FlareLiveWallpaper</string>
+    <string name="app_name">Flare Live Wallpaper</string>
     <string name="flare_wallpaper_service_label">Flare live wallpaper service</string>
     <string name="flare_settings">flarelivewallpapersettings</string>
 	<string name="settings_flare_summary">Main settings</string>
