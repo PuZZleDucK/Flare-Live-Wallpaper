@@ -36,7 +36,6 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         
-        <!--  
         <activity
             android:name=".FlareLiveWallpaperActivity"
             android:label="@string/app_name" >
@@ -48,7 +47,6 @@
 					android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-		-->
 		
 
 		<service
