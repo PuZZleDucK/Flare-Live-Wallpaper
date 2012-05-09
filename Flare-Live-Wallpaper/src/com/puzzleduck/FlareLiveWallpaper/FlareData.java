@@ -157,8 +157,8 @@ public class FlareData {
 									break;
 							}
 							c.drawPoint(
-								(float)( (double)this.getExplosion2Radius() * (Math.sin((double)((double)j/(double)this.getExplosion2Count())*0.017453293*360)) +     (double)thisFlare.getExplosionRadius() * (Math.sin((double)((double)i/(double)thisFlare.getExplosionCount())*0.017453293*360)) + thisFlare.getX() + rng.nextInt(2)-4),
-								(float)( (double)this.getExplosion2Radius() * (Math.cos((double)((double)j/(double)this.getExplosion2Count())*0.017453293*360)) +     (double)thisFlare.getExplosionRadius() * (Math.cos((double)((double)i/(double)thisFlare.getExplosionCount())*0.017453293*360)) + thisFlare.getY() + rng.nextInt(2)-4),
+								(float)( (double)this.getExplosion2Radius() * (Math.sin((double)((double)j/(double)this.getExplosion2Count())*0.017453293*360)) +     (double)this.getExplosionRadius() * (Math.sin((double)((double)i/(double)thisFlare.getExplosionCount())*0.017453293*360)) + thisFlare.getX() + rng.nextInt(2)-4),
+								(float)( (double)this.getExplosion2Radius() * (Math.cos((double)((double)j/(double)this.getExplosion2Count())*0.017453293*360)) +     (double)this.getExplosionRadius() * (Math.cos((double)((double)i/(double)thisFlare.getExplosionCount())*0.017453293*360)) + thisFlare.getY() + rng.nextInt(2)-4),
 								mPaint);
 
 						}
