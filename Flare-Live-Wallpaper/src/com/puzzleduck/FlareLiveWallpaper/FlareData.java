@@ -3,6 +3,7 @@ package com.puzzleduck.FlareLiveWallpaper;
 public class FlareData {
 	private float x;
 	private float y;
+	private float angle;
 	private float time;
 	private float triggerTime;
 	private float stage1Time;
@@ -19,6 +20,7 @@ public class FlareData {
 	public FlareData() {
 		x = 100;
 		y = 100;
+		angle = 90;
 		time = 0;
 		triggerTime = 50;
 		setStage1Time(50);
@@ -38,6 +40,7 @@ public class FlareData {
 	{
 		x = inx;
 		y = iny;
+		angle = 90;
 		time = 0;
 		triggerTime = 50;
 		setStage1Time(stage1);
@@ -53,6 +56,15 @@ public class FlareData {
 		explosion2Radius = 0;
 	}
 
+	
+	public float getAngle(){
+		return angle;
+	}
+	
+	public void setAngle(float inAngle){
+		angle = inAngle;
+	}
+	
 	public float getX() {
 		return x;
 	}
