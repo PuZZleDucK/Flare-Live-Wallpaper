@@ -74,9 +74,9 @@ public class FlareData {
 				//stage 2
 //				            Log.d(TAG, "S2");
 
-				if(thisFlare.getExplosionCount() == 0) //new explosion
+				if(this.getExplosionCount() == 0) //new explosion
 				{
-					thisFlare.setExplosionCount(6 + rng.nextInt(20) );
+					this.setExplosionCount(6 + rng.nextInt(20) );
 //								Log.d(TAG, "\n\nFlare count: " + thisFlare.getExplosionCount());
 
 //								for(int i = thisFlare.getExplosionCount(); i > 0; i--)
@@ -89,25 +89,25 @@ public class FlareData {
 //								}
 				}
 
-				mPaint.setColor(thisFlare.getColor1());
-				thisFlare.incrementExplosionRadius();
-				thisFlare.incrementExplosionRadius();
+				mPaint.setColor(this.getColor1());
+				this.incrementExplosionRadius();
+				this.incrementExplosionRadius();
 				//fade colors
 				if(rng.nextInt(4) == 1)
 				{
-					thisFlare.setColor1(thisFlare.getColor1()-0x01000000);
+					this.setColor1(this.getColor1()-0x01000000);
 				}
 				//drift down
 				if(rng.nextInt(40) == 1)
 				{
-					thisFlare.setY(thisFlare.getY()+1);
+					this.setY(this.getY()+1);
 				}
 
-				for(int i = thisFlare.getExplosionCount(); i > 0; i--)
+				for(int i = this.getExplosionCount(); i > 0; i--)
 				{
 					c.drawCircle(
-						(float)((double)thisFlare.getExplosionRadius() * (Math.sin((double)((double)i/(double)thisFlare.getExplosionCount())*0.017453293*360)) + thisFlare.getX() + rng.nextInt(2)-4),
-						(float)((double)thisFlare.getExplosionRadius() * (Math.cos((double)((double)i/(double)thisFlare.getExplosionCount())*0.017453293*360)) + thisFlare.getY() + rng.nextInt(2)-4),
+						(float)((double)this.getExplosionRadius() * (Math.sin((double)((double)i/(double)this.getExplosionCount())*0.017453293*360)) + this.getX() + rng.nextInt(2)-4),
+						(float)((double)this.getExplosionRadius() * (Math.cos((double)((double)i/(double)this.getExplosionCount())*0.017453293*360)) + this.getY() + rng.nextInt(2)-4),
 						1,
 						mPaint);
 //								c.drawCircle(
@@ -118,42 +118,42 @@ public class FlareData {
 				}
 			}else
 			{
-				if(thisFlare.getTime() < thisFlare.getStage1Time() + thisFlare.getStage2Time() + thisFlare.getStage3Time())
+				if(this.getTime() < this.getStage1Time() + this.getStage2Time() + this.getStage3Time())
 				{
 					//stage 3
-					mPaint.setColor(thisFlare.getColor2());
-					thisFlare.incrementExplosion2Radius();
+					mPaint.setColor(this.getColor2());
+					this.incrementExplosion2Radius();
 
-					if(thisFlare.getExplosion2Count() == 0) //new explosion
+					if(this.getExplosion2Count() == 0) //new explosion
 					{
-						thisFlare.setExplosion2Count(4 + rng.nextInt(8) );
+						this.setExplosion2Count(4 + rng.nextInt(8) );
 						//								Log.d(TAG, "\n\nFlare2 count: " + thisFlare.getExplosionCount());
 
 					}
 
 
 
-					for(int i = thisFlare.getExplosionCount(); i > 0; i--)
+					for(int i = this.getExplosionCount(); i > 0; i--)
 					{
-						for(int j = thisFlare.getExplosion2Count(); j > 0; j--)
+						for(int j = this.getExplosion2Count(); j > 0; j--)
 						{
 
 							switch(rng.nextInt(5))
 							{
 								case(0):
-									mPaint.setColor(thisFlare.getColor2()-0x2200000);
-
+									mPaint.setColor(this.getColor2()-0x2200000);
+									break;
 								case(2):
 
-									mPaint.setColor(thisFlare.getColor2()+0x22000000);
+									mPaint.setColor(this.getColor2()+0x22000000);
 									break;
 								default:
-									mPaint.setColor(thisFlare.getColor2());
+									mPaint.setColor(this.getColor2());
 									break;
 							}
 							c.drawPoint(
-								(float)( (double)thisFlare.getExplosion2Radius() * (Math.sin((double)((double)j/(double)thisFlare.getExplosion2Count())*0.017453293*360)) +     (double)thisFlare.getExplosionRadius() * (Math.sin((double)((double)i/(double)thisFlare.getExplosionCount())*0.017453293*360)) + thisFlare.getX() + rng.nextInt(2)-4),
-								(float)( (double)thisFlare.getExplosion2Radius() * (Math.cos((double)((double)j/(double)thisFlare.getExplosion2Count())*0.017453293*360)) +     (double)thisFlare.getExplosionRadius() * (Math.cos((double)((double)i/(double)thisFlare.getExplosionCount())*0.017453293*360)) + thisFlare.getY() + rng.nextInt(2)-4),
+								(float)( (double)this.getExplosion2Radius() * (Math.sin((double)((double)j/(double)this.getExplosion2Count())*0.017453293*360)) +     (double)thisFlare.getExplosionRadius() * (Math.sin((double)((double)i/(double)thisFlare.getExplosionCount())*0.017453293*360)) + thisFlare.getX() + rng.nextInt(2)-4),
+								(float)( (double)this.getExplosion2Radius() * (Math.cos((double)((double)j/(double)this.getExplosion2Count())*0.017453293*360)) +     (double)thisFlare.getExplosionRadius() * (Math.cos((double)((double)i/(double)thisFlare.getExplosionCount())*0.017453293*360)) + thisFlare.getY() + rng.nextInt(2)-4),
 								mPaint);
 
 						}
@@ -161,13 +161,13 @@ public class FlareData {
 						//fade colors
 						if(rng.nextInt(5) == 1)
 						{
-							thisFlare.setColor2(thisFlare.getColor2()-0x01000000);
+							this.setColor2(this.getColor2()-0x01000000);
 						}
 
 						//drift down
 						if(rng.nextInt(40) == 1)
 						{
-							thisFlare.setY(thisFlare.getY()+1);
+							this.setY(this.getY()+1);
 						}
 					}
 
@@ -177,7 +177,8 @@ public class FlareData {
 				}else
 				{
 					//expiring:   ... working :)
-					fIterator.remove();
+					fIterator.remove(); 
+					//thinking about internalizing the array list, or another sub class
 
 				}
 			}
