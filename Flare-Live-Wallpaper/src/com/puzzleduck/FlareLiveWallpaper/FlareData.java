@@ -1,5 +1,6 @@
 package com.puzzleduck.FlareLiveWallpaper;
 import android.graphics.*;
+import java.util.*;
 
 public class FlareData {
 	private float x;
@@ -18,7 +19,10 @@ public class FlareData {
 	private int explosionCount;
 	private int explosion2Count;
 	private int explosion2Radius;
+	private static Random rng;
+	
 	public FlareData() {
+		rng = new Random();
 		x = 100;
 		y = 100;
 		angle = 90;
@@ -39,6 +43,7 @@ public class FlareData {
 	
 	public FlareData(float inx, float iny, float inTilt, int incolor1, int incolor2, int intype, int stage1, int stage2, int stage3)
 	{
+		rng = new Random();
 		x = inx;
 		y = iny;
 		angle = 90-inTilt;

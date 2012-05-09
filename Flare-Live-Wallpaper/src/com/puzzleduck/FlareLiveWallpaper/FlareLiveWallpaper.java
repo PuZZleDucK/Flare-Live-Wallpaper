@@ -213,7 +213,7 @@ public class FlareLiveWallpaper extends WallpaperService {
         
         void drawTouchPointFlare(Canvas c) {
 
-			Random rng = new Random();
+		//	Random rng = new Random();
 //            Log.d(TAG, "Start Flare");
         	//add after flare...viral...crack
 //new flare 
