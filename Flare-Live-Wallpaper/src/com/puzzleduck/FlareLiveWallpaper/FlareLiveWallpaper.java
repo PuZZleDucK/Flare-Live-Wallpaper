@@ -244,7 +244,12 @@ public class FlareLiveWallpaper extends WallpaperService {
 					thisFlare.move();
 					thisFlare.render(c, mPaint);
 					
-					
+					if(thisFlare.getTime() > thisFlare.getStage1Time() + thisFlare.getStage2Time() + thisFlare.getStage3Time())
+					{
+
+						//expiring:   ... working :)  still ;)
+						fIterator.remove(); 
+					}
 				}//for
 
         }//flare

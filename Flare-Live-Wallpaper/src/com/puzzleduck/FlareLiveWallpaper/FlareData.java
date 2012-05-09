@@ -1,6 +1,8 @@
 package com.puzzleduck.FlareLiveWallpaper;
 import android.graphics.*;
 import java.util.*;
+import android.os.*;
+import java.util.Iterator;
 
 public class FlareData {
 	private float x;
@@ -181,8 +183,6 @@ public class FlareData {
 
 				}else
 				{
-					//expiring:   ... working :)
-					fIterator.remove(); 
 					//thinking about internalizing the array list, or another sub class
 
 				}
