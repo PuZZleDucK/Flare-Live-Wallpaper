@@ -62,15 +62,15 @@ public class FlareData {
 		// TODO: Implement this method
 
 		//render
-		if (thisFlare.getTime() < thisFlare.getStage1Time()) {
+		if (this.getTime() < this.getStage1Time()) {
 			//stage 1
 //			            Log.d(TAG, "S1");
 //						mPaint.setColor(0xFF00FF00);
 			mPaint.setColor(0xCCDDDD00);
 //						c.drawCircle(thisFlare.getX(), thisFlare.getY(), 3, mPaint);
-			c.drawRoundRect(new RectF(thisFlare.getX(), thisFlare.getY(), thisFlare.getX()+1, thisFlare.getY()+5), 0, 0, mPaint);
+			c.drawRoundRect(new RectF(this.getX(), this.getY(), this.getX()+1, this.getY()+5), 0, 0, mPaint);
 		} else {
-			if (thisFlare.getTime() < thisFlare.getStage1Time() + thisFlare.getStage2Time()) {
+			if (this.getTime() < this.getStage1Time() + this.getStage2Time()) {
 				//stage 2
 //				            Log.d(TAG, "S2");
 
@@ -191,10 +191,10 @@ public class FlareData {
 		// TODO: Implement this method
 
 		//move  old flare/virs
-		if (thisFlare.getTime() < thisFlare.getStage1Time()) 
+		if (this.getTime() < this.getStage1Time()) 
 		{
-			thisFlare.setY((float) (thisFlare.getY()
-						   + Math.sin(SystemClock.elapsedRealtime()) - 0.2 * thisFlare.getTime() ));
+			this.setY((float) (this.getY()
+						   + Math.sin(SystemClock.elapsedRealtime()) - 0.2 * this.getTime() ));
 			//thisFlare.setX((float) thisFlare.getX()
 			//		+ (float) Math.sin(SystemClock.elapsedRealtime()) + (( thisFlare.getTilt() * thisFlare.getTime())/80)  );
 
@@ -209,7 +209,7 @@ public class FlareData {
 //							//
 //						}
 
-		thisFlare.setTime(thisFlare.getTime() + 1);
+		this.setTime(this.getTime() + 1);
 		
 	}
 
