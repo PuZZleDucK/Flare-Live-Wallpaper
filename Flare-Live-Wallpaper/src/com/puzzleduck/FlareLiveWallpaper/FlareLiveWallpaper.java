@@ -276,6 +276,13 @@ public class FlareLiveWallpaper extends WallpaperService {
 //            c.drawText("mCenterX1= " + mCenterX1, 5, 690, mPaint);
 //            c.drawText("mCenterY1= " + mCenterY1, 5, 710, mPaint);
             c.drawText("flareCount= " + flareList.size(), 5, 210, mPaint);
+			//FlareData aFlare;
+			int line = 0;
+			for(FlareData aFlare : flareList)
+			{
+				line += 10;
+				c.drawText("flare angle= " + aFlare.getAngle(), 15, 210 + line, mPaint);
+			}
             
             mPaint.setColor(oldColor);
 
