@@ -245,8 +245,12 @@ public class FlareLiveWallpaper extends WallpaperService {
 					{
 						thisFlare.setY((float) (thisFlare.getY()
 								+ Math.sin(SystemClock.elapsedRealtime()) - 0.2 * thisFlare.getTime() ));
-						thisFlare.setX((float) thisFlare.getX()
-								+ (float) Math.sin(SystemClock.elapsedRealtime()) + (( thisFlare.getTilt() * thisFlare.getTime())/80)  );
+						//thisFlare.setX((float) thisFlare.getX()
+						//		+ (float) Math.sin(SystemClock.elapsedRealtime()) + (( thisFlare.getTilt() * thisFlare.getTime())/80)  );
+								
+								//removing tilt:
+								
+								
 					} 
 //					else {
 //					}

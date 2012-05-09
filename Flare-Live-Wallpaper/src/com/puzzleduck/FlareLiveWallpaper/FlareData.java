@@ -9,7 +9,7 @@ public class FlareData {
 	private float stage1Time;
 	private float stage2Time;
 	private float stage3Time;
-	private float tilt;
+	//private float tilt;
 	private int color1;
 	private int color2;
 	private int type;
@@ -26,7 +26,7 @@ public class FlareData {
 		setStage1Time(50);
 		setStage2Time(20);
 		setStage3Time(10);
-		tilt = 0;
+		//tilt = 0;
 		color1 = 0xFF00FF00;
 		color2 = 0xFF0000FF;
 		type = 0;
@@ -40,13 +40,13 @@ public class FlareData {
 	{
 		x = inx;
 		y = iny;
-		angle = 90;
+		angle = 90-inTilt;
 		time = 0;
 		triggerTime = 50;
 		setStage1Time(stage1);
 		setStage2Time(stage2);
 		setStage3Time(stage3);
-		tilt = inTilt;
+		//tilt = inTilt;
 		color1 = incolor1;
 		color2 = incolor2;
 		type = intype;
@@ -97,13 +97,13 @@ public class FlareData {
 		this.triggerTime = triggerTime;
 	}
 
-	public float getTilt() {
-		return tilt;
-	}
-
-	public void setTilt(float tilt) {
-		this.tilt = tilt;
-	}
+//	public float getTilt() {
+//		return tilt;
+//	}
+//
+//	public void setTilt(float tilt) {
+//		this.tilt = tilt;
+//	}
 
 	public int getColor1() {
 		return color1;
