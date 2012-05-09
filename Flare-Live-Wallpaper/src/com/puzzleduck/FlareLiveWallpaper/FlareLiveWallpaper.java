@@ -224,11 +224,11 @@ public class FlareLiveWallpaper extends WallpaperService {
                 	if (flareList.size() > 0 ) {
                 		if(flareList.get(flareList.size()-1).getTime() > 10)
                 		{
-                			flareList.add(new FlareData(mTouchX, mTouchY, rng.nextInt(10)-5, 0xDD00FF00, 0xDDFF0000, 0, 30 + rng.nextInt(20), 15 + rng.nextInt(10), 30+rng.nextInt(20)));
+                			flareList.add(new FlareData(mTouchX, mTouchY, 0xDD00FF00, 0xDDFF0000, 0));
                 		}
                 	}else
                 	{
-                		flareList.add(new FlareData(mTouchX, mTouchY, rng.nextInt(10)-5, 0xDD0000FF, 0xDDFF0000, 0, 30 + rng.nextInt(20), 15 + rng.nextInt(10), 30+rng.nextInt(20)));
+                		flareList.add(new FlareData(mTouchX, mTouchY, 0xDD0000FF, 0xDDFF0000, 0 ));
                 			
                 	}
                 }
