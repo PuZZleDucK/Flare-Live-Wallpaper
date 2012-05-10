@@ -77,6 +77,7 @@ public class FlareData {
 //						c.drawCircle(thisFlare.getX(), thisFlare.getY(), 3, mPaint);
 			int flareWidth = 4;
 			int flareHeight = 18;
+			// use angle to draw angular rocket later
 			c.drawRoundRect(new RectF(this.getX()-(flareWidth/2), this.getY()-(flareHeight/2), this.getX()+(flareWidth/2), this.getY()+(flareHeight/2)), 0, 0, mPaint);
 		} else {
 			if (this.getTime() < this.getStage1Time() + this.getStage2Time()) {
@@ -85,7 +86,9 @@ public class FlareData {
 
 				if(this.getExplosionCount() == 0) //new explosion
 				{
-					this.setExplosionCount(6 + rng.nextInt(20) );
+					int firstExplosionMin = 5;
+					int firstExplosionMax = 30;
+					this.setExplosionCount(firstExplosionMin + rng.nextInt(firstExplosionMax) );
 //								Log.d(TAG, "\n\nFlare count: " + thisFlare.getExplosionCount());
 
 //								for(int i = thisFlare.getExplosionCount(); i > 0; i--)
@@ -99,8 +102,8 @@ public class FlareData {
 				}
 
 				mPaint.setColor(this.getColor1());
-				this.incrementExplosionRadius();
-				this.incrementExplosionRadius();
+				this.incrementExplosionRadius(2);
+				//this.incrementExplosionRadius();
 				//fade colors
 				if(rng.nextInt(4) == 1)
 				{
@@ -135,7 +138,10 @@ public class FlareData {
 
 					if(this.getExplosion2Count() == 0) //new explosion
 					{
-						this.setExplosion2Count(4 + rng.nextInt(8) );
+
+						int secondExplosionMin = 2;
+						int secondExplosionMax = 12;
+						this.setExplosion2Count(secondExplosionMin + rng.nextInt(secondExplosionMax) );
 						//								Log.d(TAG, "\n\nFlare2 count: " + thisFlare.getExplosionCount());
 
 					}
@@ -191,6 +197,12 @@ public class FlareData {
 			}
 
 		}//else
+	}
+
+	private void incrementExplosionRadius(int p0)
+	{
+		// TODO: Implement this method
+		this.explosionRadius += p0;
 	}
 
 
