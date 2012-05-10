@@ -189,10 +189,6 @@ public class FlareData {
 
 
 
-				}else
-				{
-					//thinking about internalizing the array list, or another sub class
-
 				}
 			}
 
