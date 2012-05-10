@@ -126,8 +126,8 @@ public class FlareData {
 				for(double i = this.getExplosionCount(); i > 0; i--)
 				{
 					c.drawCircle(
-						(float)((double)this.getExplosionRadius() * (Math.sin((i/(double)this.getExplosionCount())*0.017453293*360)) + this.getX() + rng.nextInt(2)-4),
-						(float)((double)this.getExplosionRadius() * (Math.cos((i/(double)this.getExplosionCount())*0.017453293*360)) + this.getY() + rng.nextInt(2)-4),
+						(float)(this.getExplosionRadius() * (Math.sin((i/this.getExplosionCount())*0.017453293*360)) + this.getX() + rng.nextInt(2)-4),
+						(float)(this.getExplosionRadius() * (Math.cos((i/this.getExplosionCount())*0.017453293*360)) + this.getY() + rng.nextInt(2)-4),
 						1,
 						mPaint);
 //								c.drawCircle(
@@ -172,8 +172,8 @@ public class FlareData {
 									break;
 							}
 							c.drawPoint(
-								(float)( (double)this.getExplosion2Radius() * (Math.sin((double)((double)j/(double)this.getExplosion2Count())*0.017453293*360)) +     (double)this.getExplosionRadius() * (Math.sin((double)((double)i/(double)this.getExplosionCount())*0.017453293*360)) + this.getX() + rng.nextInt(2)-4),
-								(float)( (double)this.getExplosion2Radius() * (Math.cos((double)((double)j/(double)this.getExplosion2Count())*0.017453293*360)) +     (double)this.getExplosionRadius() * (Math.cos((double)((double)i/(double)this.getExplosionCount())*0.017453293*360)) + this.getY() + rng.nextInt(2)-4),
+								(float)( this.getExplosion2Radius() * (Math.sin(((double)j/this.getExplosion2Count())*0.017453293*360)) + this.getExplosionRadius() * (Math.sin(((double)i/this.getExplosionCount())*0.017453293*360)) + this.getX() + rng.nextInt(2)-4),
+								(float)( this.getExplosion2Radius() * (Math.cos(((double)j/this.getExplosion2Count())*0.017453293*360)) + this.getExplosionRadius() * (Math.cos(((double)i/this.getExplosionCount())*0.017453293*360)) + this.getY() + rng.nextInt(2)-4),
 								mPaint);
 
 						}
@@ -200,7 +200,7 @@ public class FlareData {
 		}//else
 	}
 
-	private void incrementExplosionRadius(int p0)
+	private void incrementExplosionRadius(double p0)
 	{
 		// TODO: Implement this method
 		this.explosionRadius += p0;
