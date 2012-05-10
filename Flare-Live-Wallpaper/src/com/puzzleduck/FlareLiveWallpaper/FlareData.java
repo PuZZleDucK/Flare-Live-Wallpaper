@@ -43,7 +43,7 @@ public class FlareData {
 		explosion2Radius = 0;
 	}
 	
-	public FlareData(float inx, float iny, int incolor1, int incolor2, int intype)
+	public FlareData(float inx, float iny, int intype)
 	{
 		rng = new Random();
 		x = inx;
@@ -59,8 +59,8 @@ public class FlareData {
 		setStage2Time(15 + rng.nextInt(10));
 		setStage3Time(30+rng.nextInt(20));
 		//tilt = inTilt;
-		color1 = incolor1;
-		color2 = incolor2;
+		color1 = Color.argb(rng.nextInt(155)+100,rng.nextInt(155)+100,rng.nextInt(155)+100,0);//incolor1;
+		color2 = Color.argb(rng.nextInt(155)+100,rng.nextInt(155)+100,rng.nextInt(155)+100,0); //incolor2;
 		type = intype;
 		explosionRadius = 0;
 		explosionCount = 0;
@@ -74,8 +74,9 @@ public class FlareData {
 			//stage 1
 //			            Log.d(TAG, "S1");
 //						mPaint.setColor(0xFF00FF00);
-			mPaint.setColor(0xCCDDDD00);
-			mPaint.setARGB(150,180,0,0);
+			//mPaint.setColor(0xCCDDDD00);
+		    int flareColor = Color.argb(170,210,0,0);
+			mPaint.setColor(flareColor);
 //						c.drawCircle(thisFlare.getX(), thisFlare.getY(), 3, mPaint);
 			int flareWidth = 4;
 			int flareHeight = 18;

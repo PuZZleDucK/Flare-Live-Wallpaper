@@ -17,6 +17,7 @@ import android.os.SystemClock;
 import android.service.wallpaper.WallpaperService;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
+import android.graphics.*;
 
 //This animated wallpaper draws flares and.fire works
 public class FlareLiveWallpaper extends WallpaperService {
@@ -224,11 +225,14 @@ public class FlareLiveWallpaper extends WallpaperService {
                 	if (flareList.size() > 0 ) {
                 		if(flareList.get(flareList.size()-1).getTime() > 10)
                 		{
-                			flareList.add(new FlareData(mTouchX, mTouchY, 0xDD00FF00, 0xDDFF0000, 0));
+						//	int flareColor1 = Color.argb(rng.nextInt(255),210,0,0);
+						//	int flareColor2 = Color.argb(170,210,0,0);
+							
+                			flareList.add(new FlareData(mTouchX, mTouchY, 0));
                 		}
                 	}else
                 	{
-                		flareList.add(new FlareData(mTouchX, mTouchY, 0xDD0000FF, 0xDDFF0000, 0 ));
+                		flareList.add(new FlareData(mTouchX, mTouchY, 0 ));
                 			
                 	}
                 }
