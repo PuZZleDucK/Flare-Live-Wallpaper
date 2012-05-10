@@ -50,12 +50,12 @@ public class FlareData {
 		//	this.setExplosionCount();
 		int secondExplosionMin = 2;
 		int secondExplosionMax = 12;
-		this.setExplosion2Count(s);
+		//this.setExplosion2Count(s);
 		
 		rng = new Random();
 		x = inx;
 		y = iny;
-		angle = 30-rng.nextInt(60);
+		angle = 20-rng.nextInt(40);
 		//find out distance to edge of screen 
 		// and use this as a maximum for trigger times
 		// actually, just detonating within 5px 
