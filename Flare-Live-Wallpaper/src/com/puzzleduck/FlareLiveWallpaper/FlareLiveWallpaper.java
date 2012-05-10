@@ -254,6 +254,14 @@ public class FlareLiveWallpaper extends WallpaperService {
 						//expiring:   ... working :)  still ;)
 						fIterator.remove(); 
 					}
+					
+					int a = thisFlare.getColor2() >>> 24;
+					a -= 2; // fade by 2
+					if (a <= 0) { // if reached transparency kill the particle
+//10	            this.state = STATE_DEAD;
+						fIterator.remove(); 
+					} 
+					
 				}//for
 
         }//flare
@@ -300,6 +308,7 @@ public class FlareLiveWallpaper extends WallpaperService {
 
 				mPaint.setColor(Color.GREEN);
 				c.drawText(" -"
+						   +" a= " + aFlare.getAlpha() 
 						   +" c1= " + aFlare.getColor1() 
 						   +" c2=" + aFlare.getColor2(), 
 
