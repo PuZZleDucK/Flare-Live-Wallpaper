@@ -263,7 +263,7 @@ public class FlareLiveWallpaper extends WallpaperService {
 
             int oldColor = mPaint.getColor();
 
-            mPaint.setColor(0xffff0000);
+            mPaint.setColor(Color.RED);
             //mPaint.setTypeface(null);
             
             c.drawText("Last touch point: (" + (int)mLastTouchX + "," + (int)mLastTouchX + ")", 		5, 100, mPaint);
@@ -297,6 +297,13 @@ public class FlareLiveWallpaper extends WallpaperService {
 						   +" time= " + aFlare.getTime(), 
 					
 					5, 210 + line, mPaint);
+
+				mPaint.setColor(Color.GREEN);
+				c.drawText(" -"
+						   +" c1= " + aFlare.getColor1() 
+						   +" c2=" + aFlare.getColor2(), 
+
+						   5, 310 + line, mPaint);
 			}
             
             mPaint.setColor(oldColor);
