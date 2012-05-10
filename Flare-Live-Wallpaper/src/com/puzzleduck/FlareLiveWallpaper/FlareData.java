@@ -48,7 +48,7 @@ public class FlareData {
 		rng = new Random();
 		x = inx;
 		y = iny;
-		angle = 90-rng.nextInt(360);
+		angle = 30-rng.nextInt(60);
 		time = 0;
 		triggerTime = 50;
 		setStage1Time(30 + rng.nextInt(20)); //, 
@@ -115,11 +115,11 @@ public class FlareData {
 					this.setY(this.getY()+1);
 				}
 
-				for(int i = this.getExplosionCount(); i > 0; i--)
+				for(double i = this.getExplosionCount(); i > 0; i--)
 				{
 					c.drawCircle(
-						(float)((double)this.getExplosionRadius() * (Math.sin((double)((double)i/(double)this.getExplosionCount())*0.017453293*360)) + this.getX() + rng.nextInt(2)-4),
-						(float)((double)this.getExplosionRadius() * (Math.cos((double)((double)i/(double)this.getExplosionCount())*0.017453293*360)) + this.getY() + rng.nextInt(2)-4),
+						(float)((double)this.getExplosionRadius() * (Math.sin((i/(double)this.getExplosionCount())*0.017453293*360)) + this.getX() + rng.nextInt(2)-4),
+						(float)((double)this.getExplosionRadius() * (Math.cos((i/(double)this.getExplosionCount())*0.017453293*360)) + this.getY() + rng.nextInt(2)-4),
 						1,
 						mPaint);
 //								c.drawCircle(
