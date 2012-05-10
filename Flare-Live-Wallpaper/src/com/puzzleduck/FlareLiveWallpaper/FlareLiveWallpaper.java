@@ -275,13 +275,24 @@ public class FlareLiveWallpaper extends WallpaperService {
 //            c.drawText("mTouchY = " + mTouchY, 		5, 630, mPaint);
 //            c.drawText("mCenterX1= " + mCenterX1, 5, 690, mPaint);
 //            c.drawText("mCenterY1= " + mCenterY1, 5, 710, mPaint);
-            c.drawText("flareCount= " + flareList.size(), 5, 210, mPaint);
+
+			int textSize = 22;
+			mPaint.setTextSize(textSize);
+            c.drawText("flareCount= " + flareList.size(), 2, 210, mPaint);
 			//FlareData aFlare;
 			int line = 0;
 			for(FlareData aFlare : flareList)
 			{
-				line += 10;
-				c.drawText("flare angle= " + aFlare.getAngle(), 15, 210 + line, mPaint);
+				line += textSize;
+				c.drawText(" -"
+						   +" a= " + aFlare.getAngle() 
+						   +" 1=" + aFlare.getStage1Time()
+						   +" 2=" + aFlare.getStage2Time()
+						   +" 3=" + aFlare.getStage3Time()
+						   +" t=" + aFlare.getTriggerTime()
+						   +" time= " + aFlare.getTime(), 
+					
+					5, 210 + line, mPaint);
 			}
             
             mPaint.setColor(oldColor);
