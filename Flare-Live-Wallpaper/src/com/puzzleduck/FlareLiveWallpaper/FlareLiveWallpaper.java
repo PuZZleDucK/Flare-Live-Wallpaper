@@ -257,7 +257,7 @@ public class FlareLiveWallpaper extends WallpaperService {
 					
 					int a = thisFlare.getColor2() >>> 24;
 					a -= 2; // fade by 2
-					if (a <= 0) { // if reached transparency kill the particle
+					if (a <= 20) { // if reached transparency kill the particle
 //10	            this.state = STATE_DEAD;
 						fIterator.remove(); 
 					} 

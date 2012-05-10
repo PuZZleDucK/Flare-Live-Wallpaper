@@ -154,7 +154,7 @@ public class FlareData {
 
 							//fade colors
 							mPaint.setColor(this.getColor2());
-							if(rng.nextInt(20) == 1)
+							if(rng.nextInt(25) == 1)
 							{
 								//this.setColor2( this.getColor2()-1 );
 								//this.setColor2(this.getColor2()-0x01000000);
@@ -163,7 +163,7 @@ public class FlareData {
 								//
 								
 								int a = this.color2 >>> 24;
-                     	        a -= 2; // fade by 2
+                     	        a -= 1; // fade by 2
                       	        if (a <= 0) { // if reached transparency kill the particle
 //10	            this.state = STATE_DEAD;
 								
