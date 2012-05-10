@@ -45,6 +45,13 @@ public class FlareData {
 	
 	public FlareData(float inx, float iny, int intype)
 	{
+		int firstExplosionMin = 5;
+		int firstExplosionMax = 30;
+		//	this.setExplosionCount();
+		int secondExplosionMin = 2;
+		int secondExplosionMax = 12;
+		this.setExplosion2Count(s);
+		
 		rng = new Random();
 		x = inx;
 		y = iny;
@@ -62,9 +69,9 @@ public class FlareData {
 		color1 = Color.argb(rng.nextInt(155)+100,rng.nextInt(155)+100,rng.nextInt(155)+100,0);//incolor1;
 		color2 = Color.argb(rng.nextInt(155)+100,rng.nextInt(155)+100,rng.nextInt(155)+100,0); //incolor2;
 		type = intype;
+		explosionCount = firstExplosionMin + rng.nextInt(firstExplosionMax);
 		explosionRadius = 0;
-		explosionCount = 0;
-		explosion2Count = 0;
+		explosion2Count = secondExplosionMin + rng.nextInt(secondExplosionMax) ;
 		explosion2Radius = 0;
 	}
 
@@ -87,11 +94,9 @@ public class FlareData {
 				//stage 2
 //				            Log.d(TAG, "S2");
 
-				if(this.getExplosionCount() == 0) //new explosion
-				{
-					int firstExplosionMin = 5;
-					int firstExplosionMax = 30;
-					this.setExplosionCount(firstExplosionMin + rng.nextInt(firstExplosionMax) );
+			//	if(this.getExplosionCount() == 0) //new explosion
+			//	{
+					
 //								Log.d(TAG, "\n\nFlare count: " + thisFlare.getExplosionCount());
 
 //								for(int i = thisFlare.getExplosionCount(); i > 0; i--)
@@ -102,7 +107,7 @@ public class FlareData {
 //									Log.d(TAG, "        rad sin i/count*360 " + (float)((double)thisFlare.getExplosionRadius()+20) * Math.sin((double)((double)i/(double)thisFlare.getExplosionCount())*359.0));
 //									Log.d(TAG, "        rad cos i/count*360 " + (float)((double)thisFlare.getExplosionRadius()+20) * Math.cos((double)((double)i/(double)thisFlare.getExplosionCount())*359.0));
 //								}
-				}
+				//}
 
 				mPaint.setColor(this.getColor1());
 				this.incrementExplosionRadius(2);
@@ -139,15 +144,12 @@ public class FlareData {
 					mPaint.setColor(this.getColor2());
 					this.incrementExplosion2Radius();
 
-					if(this.getExplosion2Count() == 0) //new explosion
-					{
-
-						int secondExplosionMin = 2;
-						int secondExplosionMax = 12;
-						this.setExplosion2Count(secondExplosionMin + rng.nextInt(secondExplosionMax) );
-						//								Log.d(TAG, "\n\nFlare2 count: " + thisFlare.getExplosionCount());
-
-					}
+//					if(this.getExplosion2Count() == 0) //new explosion
+//					{
+//
+//						//								Log.d(TAG, "\n\nFlare2 count: " + thisFlare.getExplosionCount());
+//
+//					}
 
 
 
