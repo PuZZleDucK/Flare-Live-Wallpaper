@@ -49,6 +49,10 @@ public class FlareData {
 		x = inx;
 		y = iny;
 		angle = 30-rng.nextInt(60);
+		//find out distance to edge of screen 
+		// and use this as a maximum for trigger times
+		// actually, just detonating within 5px 
+		// of the edge of screen would do the job.
 		time = 0;
 		triggerTime = 50;
 		setStage1Time(30 + rng.nextInt(20)); //, 
@@ -66,14 +70,12 @@ public class FlareData {
 
 	public void render(Canvas c, Paint mPaint)
 	{
-		// TODO: Implement this method
-
-		//render
 		if (this.getTime() < this.getStage1Time()) {
 			//stage 1
 //			            Log.d(TAG, "S1");
 //						mPaint.setColor(0xFF00FF00);
 			mPaint.setColor(0xCCDDDD00);
+			mPaint.setARGB(150,180,0,0);
 //						c.drawCircle(thisFlare.getX(), thisFlare.getY(), 3, mPaint);
 			int flareWidth = 4;
 			int flareHeight = 18;
