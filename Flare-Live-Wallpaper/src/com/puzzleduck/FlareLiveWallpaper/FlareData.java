@@ -17,10 +17,10 @@ public class FlareData {
 	private int color1;
 	private int color2;
 	private int type;
-	private int explosionRadius;
+	private double explosionRadius;
 	private int explosionCount;
 	private int explosion2Count;
-	private int explosion2Radius;
+	private double explosion2Radius;
 	private static Random rng;
 	
 	public FlareData() {
@@ -331,14 +331,14 @@ public class FlareData {
 		return stage3Time;
 	}
 
-	public void setExplosionRadius(int explosionRadius) {
+	public void setExplosionRadius(double explosionRadius) {
 		this.explosionRadius = explosionRadius;
 	}
 	public void incrementExplosionRadius() {
 		this.explosionRadius ++;
 	}
 
-	public int getExplosionRadius() {
+	public double getExplosionRadius() {
 		return explosionRadius;
 	}
 
@@ -362,7 +362,7 @@ public class FlareData {
 		this.explosion2Radius ++;
 		
 	}
-	public int getExplosion2Radius() {
+	public double getExplosion2Radius() {
 		return explosion2Radius;
 	}
 }
