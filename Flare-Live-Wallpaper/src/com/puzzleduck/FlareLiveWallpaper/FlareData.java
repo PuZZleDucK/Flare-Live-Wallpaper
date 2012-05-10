@@ -75,7 +75,9 @@ public class FlareData {
 //						mPaint.setColor(0xFF00FF00);
 			mPaint.setColor(0xCCDDDD00);
 //						c.drawCircle(thisFlare.getX(), thisFlare.getY(), 3, mPaint);
-			c.drawRoundRect(new RectF(this.getX(), this.getY(), this.getX()+1, this.getY()+5), 0, 0, mPaint);
+			int flareWidth = 4;
+			int flareHeight = 18;
+			c.drawRoundRect(new RectF(this.getX()-(flareWidth/2), this.getY()-(flareHeight/2), this.getX()+(flareWidth/2), this.getY()+(flareHeight/2)), 0, 0, mPaint);
 		} else {
 			if (this.getTime() < this.getStage1Time() + this.getStage2Time()) {
 				//stage 2
@@ -201,8 +203,8 @@ public class FlareData {
 		{
 			this.setY((float) (this.getY()
 						   + Math.sin(SystemClock.elapsedRealtime()) - 0.2 * this.getTime() ));
-			//thisFlare.setX((float) thisFlare.getX()
-			//		+ (float) Math.sin(SystemClock.elapsedRealtime()) + (( thisFlare.getTilt() * thisFlare.getTime())/80)  );
+			this.setX((float) this.getX()
+					+ (float) Math.sin(SystemClock.elapsedRealtime()) + (( this.getAngle() * this.getTime())/80)  );
 
 			//removing tilt:
 
