@@ -236,11 +236,11 @@ public class FlareLiveWallpaper extends WallpaperService {
 					thisFlare.move();
 					thisFlare.render(c, mPaint);
 					
-					if(thisFlare.getTime() > thisFlare.getStage1Time() + thisFlare.getStage2Time() + thisFlare.getStage3Time())
-					{
-						//expiring:   ... working :)  still ;)
-						fIterator.remove(); 
-					}
+//					if(thisFlare.getTime() > thisFlare.getStage1Time() + thisFlare.getStage2Time() + thisFlare.getStage3Time())
+//					{
+//						//expiring:   ... working :)  still ;)
+//						fIterator.remove(); 
+//					}
 					
 					int a = thisFlare.getColor2() >>> 24;
 					a -= 2; // fade by 2
@@ -287,7 +287,7 @@ public class FlareLiveWallpaper extends WallpaperService {
 						   +" a= " + aFlare.getAngle() 
 						   +" 1=" + aFlare.getStage1Time()
 						   +" 2=" + aFlare.getStage2Time()
-						   +" 3=" + aFlare.getStage3Time()
+						   //+" 3=" + aFlare.getStage3Time()
 						  // +" t=" + aFlare.getTriggerTime()
 						   +" time= " + aFlare.getTime(), 
 					
@@ -295,7 +295,7 @@ public class FlareLiveWallpaper extends WallpaperService {
 
 				mPaint.setColor(Color.GREEN);
 				c.drawText(" -"
-						   +" a= " + aFlare.getAlpha() 
+						   //+" a= " + aFlare.getAlpha() 
 						   +" c1= " + aFlare.getColor1() 
 						   +" c2=" + aFlare.getColor2(), 
 
