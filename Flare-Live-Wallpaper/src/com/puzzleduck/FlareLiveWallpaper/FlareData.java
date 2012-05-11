@@ -23,26 +23,6 @@ public class FlareData {
 	private double explosion2Radius;
 	private static Random rng;
 	
-//	public FlareData() {
-//		rng = new Random();
-//		x = 100;
-//		y = 100;
-//		angle = 90;
-//		time = 0;
-//		triggerTime = 50;
-//		setStage1Time(50);
-//		setStage2Time(20);
-//		setStage3Time(10);
-//		//tilt = 0;
-//		color1 = Color.argb(rng.nextInt(155)+100,rng.nextInt(155)+100,rng.nextInt(155)+100,0);// 0xFF00FF00;
-//		color2 = Color.argb(rng.nextInt(155)+100,rng.nextInt(155)+100,rng.nextInt(155)+100,0);// 0xFF0000FF;
-//		type = 0;
-//		explosionRadius = 0;
-//		explosionCount = 0;
-//		explosion2Count = 0;
-//		explosion2Radius = 0;
-//	}
-	
 	public FlareData(float inx, float iny, int intype)
 	{
 		int firstExplosionMin = 5;
@@ -63,7 +43,6 @@ public class FlareData {
 		setStage1Time(30 + rng.nextInt(20)); //, 
 		setStage2Time(15 + rng.nextInt(10));
 		setStage3Time(360+rng.nextInt(20));//40
-		//tilt = inTilt;
 		color1 = Color.argb(255,rng.nextInt(155)+100,rng.nextInt(155)+100,rng.nextInt(155)+100);//incolor1;
 		color2 = Color.argb(255,rng.nextInt(155)+100,rng.nextInt(155)+100,rng.nextInt(155)+100); //incolor2;
 		type = intype;
@@ -104,12 +83,7 @@ public class FlareData {
 					default:
 						break;
 				}
-				//fade colors
-//				if(rng.nextInt(4) == 1)
-//				{
-//					this.setColor1(this.getColor1()-0x01000000);
-//				}
-				//drift down
+				//drift
 				if(rng.nextInt(40) == 1)
 				{
 					this.setY(this.getY()+1);
@@ -151,27 +125,18 @@ public class FlareData {
 									break;
 							}
 							
-
 							//fade colors
 							mPaint.setColor(this.getColor2());
 							if(rng.nextInt(25) == 1)
 							{
-								//this.setColor2( this.getColor2()-1 );
-								//this.setColor2(this.getColor2()-0x01000000);
 								this.setAlpha(this.getAlpha()-1);
 								mPaint.setAlpha(this.getAlpha());
-								//
 								
 								int a = this.color2 >>> 24;
-                     	        a -= 1; // fade by 2
-                      	        if (a <= 0) { // if reached transparency kill the particle
-//10	            this.state = STATE_DEAD;
+                     	        a -= 1; // fade
+                      	        this.color2 = (this.color2 & 0x00ffffff) + (a << 24);       // set the new alpha
 								
-                     	        } else {
-                	                this.color2 = (this.color2 & 0x00ffffff) + (a << 24);       // set the new alpha
-									}
                   	            mPaint.setAlpha(a);
-								
 							}
 							
 							c.drawPoint(
@@ -181,17 +146,12 @@ public class FlareData {
 							mPaint.setAlpha(255);
 
 						}
-
-
 						//drift down
 						if(rng.nextInt(40) == 1)
 						{
 							this.setY(this.getY()+1);
 						}
 					}
-
-
-
 
 				}
 			}
