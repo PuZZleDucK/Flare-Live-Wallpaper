@@ -9,14 +9,14 @@ public class FlareData {
 	private float y;
 	private float angle;
 	private float time;
-	private float triggerTime;
+	//private float triggerTime;
 	private float stage1Time;
 	private float stage2Time;
 	private float stage3Time;
 	private int color1;
 	private int color2;
 	private int type;
-	private int flareA;
+	private int flareAlpha;
 	private double explosionRadius;
 	private int explosionCount;
 	private int explosion2Count;
@@ -29,7 +29,7 @@ public class FlareData {
 		int firstExplosionMax = 30;
 		int secondExplosionMin = 2;
 		int secondExplosionMax = 12;
-		flareA = 255;
+		flareAlpha = 255;
 		rng = new Random();
 		x = inx;
 		y = iny;
@@ -39,7 +39,7 @@ public class FlareData {
 		// actually, just detonating within 5px 
 		// of the edge of screen would do the job.
 		time = 0;
-		triggerTime = 50;
+		//triggerTime = 50;
 		setStage1Time(30 + rng.nextInt(20)); //, 
 		setStage2Time(15 + rng.nextInt(10));
 		setStage3Time(360+rng.nextInt(20));//40
@@ -151,43 +151,30 @@ public class FlareData {
 						{
 							this.setY(this.getY()+1);
 						}
-					}
+					}//for j
+				}//for i
+			}//if final stage
 
-				}
-			}
-
-		}//else
-	}
+		}//else second stage
+	}//render function
 
 	private void incrementExplosionRadius(double p0)
 	{
-		// TODO: Implement this method
 		this.explosionRadius += p0;
 	}
 
 
 	public void move()
 	{
-		// TODO: Implement this method
-
 		//move  old flare/virs
 		if (this.getTime() < this.getStage1Time()) 
 		{
-			this.setY((float) (this.getY()
-						   + Math.sin(SystemClock.elapsedRealtime()) - 0.2 * this.getTime() ));
-			this.setX((float) this.getX()
+			this.setY( (this.getY()
+						   + (float)Math.sin(SystemClock.elapsedRealtime()) - 0.2f * this.getTime() ));
+			this.setX(this.getX()
 					+ (float) Math.sin(SystemClock.elapsedRealtime()) + (( this.getAngle() * this.getTime())/80)  );
 
-			//removing tilt:
-
-
 		} 
-//					else {
-//					}
-//						if (thisFlare.getTime() > thisFlare.getStage1Time()*3) 
-//						{
-//							//
-//						}
 
 		this.setTime(this.getTime() + 1);
 		
@@ -226,20 +213,12 @@ public class FlareData {
 		this.time = time;
 	}
 
-	public float getTriggerTime() {
-		return triggerTime;
-	}
-
-	public void setTriggerTime(float triggerTime) {
-		this.triggerTime = triggerTime;
-	}
-
-//	public float getTilt() {
-//		return tilt;
+//	public float getTriggerTime() {
+//		return triggerTime;
 //	}
-//
-//	public void setTilt(float tilt) {
-//		this.tilt = tilt;
+
+//	public void setTriggerTime(float triggerTime) {
+//		this.triggerTime = triggerTime;
 //	}
 
 	public int getColor1() {
@@ -259,11 +238,11 @@ public class FlareData {
 	}
 
 	public int getAlpha() {
-		return this.flareA;
+		return this.flareAlpha;
 	}
 
 	public void setAlpha(int alpha) {
-		this.flareA = alpha;
+		this.flareAlpha = alpha;
 	}
 	
 	public int getType() {

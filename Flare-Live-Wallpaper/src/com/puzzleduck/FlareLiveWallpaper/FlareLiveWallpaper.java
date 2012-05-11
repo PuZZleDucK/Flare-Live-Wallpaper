@@ -168,11 +168,7 @@ public class FlareLiveWallpaper extends WallpaperService {
             super.onTouchEvent(event);
         }
 
-        /*
-         * Draw one frame of the animation. This method gets called repeatedly
-         * by posting a delayed Runnable. You can do any drawing you want in
-         * here. This example draws a wireframe cube.
-         */
+        
         void drawFrame() {
             final SurfaceHolder holder = getSurfaceHolder();
 
@@ -214,10 +210,6 @@ public class FlareLiveWallpaper extends WallpaperService {
         
         void drawTouchPointFlare(Canvas c) {
 
-		//	Random rng = new Random();
-//            Log.d(TAG, "Start Flare");
-        	//add after flare...viral...crack
-//new flare 
             if (mTouchX >=0 && mTouchY >= 0) {
                 //max 5 flares
             	if (flareList.size() < MAX_FLARE_COUNT) {
@@ -225,9 +217,6 @@ public class FlareLiveWallpaper extends WallpaperService {
                 	if (flareList.size() > 0 ) {
                 		if(flareList.get(flareList.size()-1).getTime() > 10)
                 		{
-						//	int flareColor1 = Color.argb(rng.nextInt(255),210,0,0);
-						//	int flareColor2 = Color.argb(170,210,0,0);
-							
                 			flareList.add(new FlareData(mTouchX, mTouchY, 0));
                 		}
                 	}else
@@ -244,13 +233,11 @@ public class FlareLiveWallpaper extends WallpaperService {
 				{
 					thisFlare = fIterator.next();
 
-					// moving this movement stuff into.flare class
 					thisFlare.move();
 					thisFlare.render(c, mPaint);
 					
 					if(thisFlare.getTime() > thisFlare.getStage1Time() + thisFlare.getStage2Time() + thisFlare.getStage3Time())
 					{
-
 						//expiring:   ... working :)  still ;)
 						fIterator.remove(); 
 					}
@@ -301,7 +288,7 @@ public class FlareLiveWallpaper extends WallpaperService {
 						   +" 1=" + aFlare.getStage1Time()
 						   +" 2=" + aFlare.getStage2Time()
 						   +" 3=" + aFlare.getStage3Time()
-						   +" t=" + aFlare.getTriggerTime()
+						  // +" t=" + aFlare.getTriggerTime()
 						   +" time= " + aFlare.getTime(), 
 					
 					5, 210 + line, mPaint);
