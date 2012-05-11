@@ -84,16 +84,17 @@ public class FlareData {
 						break;
 				}
 				//drift
-				if(rng.nextInt(40) == 1)
+				if(rng.nextInt(20) == 1)
 				{
 					this.setY(this.getY()+1);
 				}
 
 				for(double i = this.getExplosionCount(); i > 0; i--)
 				{
+					double thisFraction = i/this.getExplosionCount();
 					c.drawCircle(
-						(float)(this.getExplosionRadius() * (Math.sin((i/this.getExplosionCount())*0.017453293*360)) + this.getX() + rng.nextInt(2)-4),
-						(float)(this.getExplosionRadius() * (Math.cos((i/this.getExplosionCount())*0.017453293*360)) + this.getY() + rng.nextInt(2)-4),
+						(float)(this.getExplosionRadius() * (Math.sin(( thisFraction )*0.017453293*360)) + this.getX() + rng.nextInt(2)-4),
+						(float)(this.getExplosionRadius() * (Math.cos(( thisFraction )*0.017453293*360)) + this.getY() + rng.nextInt(2)-4),
 						1,
 						mPaint);
 				}
